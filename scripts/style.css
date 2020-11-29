@@ -1,6 +1,5 @@
 #chart-wrapper {
-	padding-top: 20px;
-	padding-left: 10px;
+	padding: 10px;
 	background: #fff;
 	border: 1px solid #ddd;
 	box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.1);
@@ -8,7 +7,55 @@
 	margin: 35px auto;
 }
 
-#chart-line {
+#chart-time {
 	position: relative;
 	margin-top: -40px;
+}
+
+.apexcharts-tooltip {
+	background-color: rgba(255, 255, 255, 0.5) !important;
+	border-color: rgba(182, 193, 201, 0.5) !important;
+	box-shadow: none !important;
+}
+
+.apexcharts-tooltip-title {
+	background-color: rgba(236, 239, 241, 0.5) !important;
+	border-color: rgba(182, 193, 201, 0.5) !important;
+	box-shadow: none !important;
+}
+
+.apexcharts-title-text {
+	margin: 10px;
+	font-family: Helvetica, Arial, sans-serif;
+	text-anchor: start;
+	dominant-baseline: auto;
+	font-size: 15px;
+	font-weight: 900;
+	fill: rgb(55, 61, 63);
+	display: block;
+}
+
+.stats-data {
+	margin: 10px;
+	margin-left: 30px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #595959;
+    display: block;
+}
+
+.stats-loading {
+	color: #9a9a9a;
+}
+
+.stats-loaded-usd {
+	color: rgb(19, 76, 238);
+}
+
+.stats-loaded-eth {
+	color: rgb(50, 197, 255);
+}
+
+.stats-update{
+	font-size: 10px;
 }

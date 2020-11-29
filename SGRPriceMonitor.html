@@ -6,19 +6,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sögur Price Monitor</title>
 
+	<!-- Style -->
 	<link href="scripts/style.css" rel="stylesheet" />
 
+	<!-- Dependencies -->
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/eligrey-classlist-js-polyfill@1.2.20171210/classList.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/findindex_polyfill_mdn"></script>
-	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-	<script src="https://cdn.jsdelivr.net/npm/graphql.js@0.6.6/graphql.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.22.2/dist/apexcharts.min.js"></script>
+
+	<!-- Chart and Stats Script -->
 	<script defer src="scripts/priceMonitor.js"></script>
 </head>
 
 <body>
 	<div id="chart-wrapper">
+		<!-- Current Stats -->
+		<text class="apexcharts-title-text">Sögur Current Market Price</text>
+		<div class="stats-data">
+			<text>Buy Price (USD): <text class="stats-loading">Loading Data...</text></text><br>
+			<text>Sell Price (USD): <text class="stats-loading">Loading Data...</text></text><br>
+			<text>Buy Price (ETH): <text class="stats-loading">Loading Data...</text></text><br>
+			<text>Sell Price (ETH): <text class="stats-loading">Loading Data...</text></text><br>
+			<text>Market Cap (USD): <text class="stats-loading">Loading Data...</text></text><br>
+			<text class="stats-update">Last Updated: Never</text>
+		</div>
+
+		<!-- Historical Chart -->
 		<div id="chart-data"></div>
 		<div id="chart-time"></div>
 	</div>
