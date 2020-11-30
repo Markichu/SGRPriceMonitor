@@ -88,9 +88,9 @@ var optionsData = {
 	}],
 	tooltip: {
 		enabled: true,
-		onDatasetHover: {
-			highlightDataSeries: true,
-		},
+        followCursor: true,
+        showOnMarkerHover: true,
+		shared: true,
 		x: {
 			show: true,
 			format: 'dd MMM yyyy'
@@ -115,8 +115,11 @@ var optionsData = {
 // Time Chart Options
 var optionsTime = {
 	series: [{
-		name: 'CoinGecko SGR/USD',
+		name: 'Volume (USD)',
 		data: coinGeckoUSDV
+	},{
+		name: 'Volume (ETH)',
+		data: coinGeckoETHV
 	}],
 	chart: {
 		id: 'chartTime',
@@ -185,9 +188,9 @@ var optionsTime = {
 	}],
 	tooltip: {
 		enabled: true,
-		onDatasetHover: {
-			highlightDataSeries: true,
-		},
+        followCursor: true,
+        showOnMarkerHover: true,
+		shared: true,
 		x: {
 			show: true,
 			format: 'dd MMM yyyy'
@@ -246,23 +249,24 @@ function getStats() {
 getStats();
 setInterval(function() {
 	getStats();
-}, 30 * 1000); // refresh every minute
+}, 30 * 1000); // refresh every 30 seconds
 
 // Update Chart Data
 function updateCharts() {
+	var dataLen = Math.min(coinGeckoUSD.length, coinGeckoETH.length);
 	chartData.updateSeries([{
 		name: 'CoinGecko SGR/USD',
-		data: coinGeckoUSD
+		data: coinGeckoUSD.slice(0, dataLen)
 	},{
 		name: 'CoinGecko SGR/ETH',
-		data: coinGeckoETH
+		data: coinGeckoETH.slice(0, dataLen)
 	}], true)
 	chartTime.updateSeries([{
 		name: 'Volume (USD)',
-		data: coinGeckoUSDV
+		data: coinGeckoUSDV.slice(0, dataLen)
 	},{
 		name: 'Volume (ETH)',
-		data: coinGeckoETHV
+		data: coinGeckoETHV.slice(0, dataLen)
 	}], true)
 }
 
